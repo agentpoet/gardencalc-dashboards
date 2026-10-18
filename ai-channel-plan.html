@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Channel — Plan</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-paper:       #0b0f14;
+  --color-paper-2:     #141b24;
+  --color-ink:         #f4f8fb;
+  --color-muted:       #9fb3c6;
+  --color-soft:        #9fb3c6;
+  --color-rule-solid:  #566d85;
+  --color-accent:      #fbbf24;
+  --color-accent-tint: rgba(251,191,36,0.10);
+  --color-link:        #60a5fa;
+  --font-sans:   'Segoe UI', system-ui, sans-serif;
+  --font-serif:  Georgia, 'Times New Roman', serif;
+  --font-mono:   'Consolas', ui-monospace, Menlo, monospace;
+}
+body { font-family: var(--font-sans); background: var(--color-paper); min-height: 100vh; padding: 3rem 2rem; color: var(--color-ink); }
+.container { max-width: 1200px; margin: 0 auto; }
+.header { margin-bottom: 2rem; }
+.header-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.75rem; }
+h1 { font-family: var(--font-serif); font-size: clamp(1.75rem, 3vw + 1rem, 2.4rem); font-weight: 400; letter-spacing: -0.01em; line-height: 1.15; color: var(--color-ink); margin-bottom: 0.5rem; }
+.subtitle { font-size: 1rem; line-height: 1.55; color: var(--color-muted); max-width: 70ch; }
+.diagram-container { background: var(--color-paper-2); border: 1px solid var(--color-rule-solid); border-radius: 10px; padding: 1.5rem; overflow-x: auto; }
+svg { width: 100%; min-width: 1100px; display: block; }
+@media print { .diagram-container { overflow-x: visible; } svg { min-width: 0; } }
+.cards { display: grid; grid-template-columns: 1.1fr 1fr 1fr 1.2fr; gap: 1rem; margin-top: 1.5rem; }
+@media (max-width: 1000px) { .cards { grid-template-columns: 1fr; } }
+.card { background: var(--color-paper-2); border-radius: 8px; border: 1px solid var(--color-rule-solid); padding: 1.25rem; }
+.card .eyebrow { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.6rem; }
+.card-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.875rem; padding-bottom: 0.875rem; border-bottom: 1px solid var(--color-rule-solid); }
+.card-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.card-dot.accent { background: var(--color-accent); }
+.card-dot.link   { background: var(--color-link); }
+.card-dot.muted  { background: var(--color-muted); }
+.card-dot.ink    { background: var(--color-ink); }
+.card h3 { font-size: 0.95rem; font-weight: 600; letter-spacing: -0.005em; color: var(--color-ink); }
+.card p, .card ul { color: var(--color-muted); font-size: 0.85rem; line-height: 1.6; list-style: none; }
+.card li { margin-bottom: 0.4rem; padding-left: 1rem; position: relative; }
+.card li::before { content: '—'; position: absolute; left: 0; color: var(--color-rule-solid); }
+.card li b { color: var(--color-ink); }
+.footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-rule-solid); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.05em; color: var(--color-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <p class="header-eyebrow">Channel plan · diagram-design · 18/10/2026</p>
+    <h1>The AI channel — nothing about gardening</h1>
+    <p class="subtitle">One channel, two cadences: scripted on-camera videos and a once-a-week AI-news episode. Our own sites are mentioned only when they ARE the proof of a claim being made on camera — never as an ad.</p>
+  </div>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 1140 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="aichannel-title aichannel-desc">
+      <title id="aichannel-title">The AI channel production and proof flow</title>
+      <desc id="aichannel-desc">Tool stack and physical setup feed the channel hub, which splits into scripted on-camera videos and a weekly AI-news episode, both drawing on named proof-point sites that lead to ironphoenix.uk.</desc>
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9fb3c6"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#fbbf24"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#60a5fa"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#0b0f14"/>
+
+      <!-- ===================== ARROWS (drawn before boxes) ===================== -->
+
+      <!-- 1: Tool stack -> Hub -->
+      <path d="M250,129 H287 Q295,129 295,137 V207 Q295,215 303,215 H340" fill="none" stroke="#9fb3c6" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="270" y="166" width="54" height="13" rx="2" fill="#0b0f14"/>
+      <text x="297" y="176" fill="#9fb3c6" font-size="8" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">SCRIPTS</text>
+
+      <!-- 2: Production setup -> Hub -->
+      <path d="M250,349 H287 Q295,349 295,341 V328 Q295,320 303,320 H340" fill="none" stroke="#9fb3c6" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="256" y="337" width="30" height="13" rx="2" fill="#0b0f14"/>
+      <text x="271" y="347" fill="#9fb3c6" font-size="8" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">SET</text>
+
+      <!-- 3: Hub -> Stream A (primary, accent) -->
+      <path d="M560,200 H602 Q610,200 610,192 V93 Q610,85 618,85 H660" fill="none" stroke="#fbbf24" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+      <rect x="583" y="136" width="68" height="13" rx="2" fill="#0b0f14"/>
+      <text x="617" y="146" fill="#fbbf24" font-size="8" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">MAIN FORMAT</text>
+
+      <!-- 4: Hub -> Proof points (dashed, occasional) -->
+      <path d="M560,260 H602 Q610,260 610,268 V292 Q610,300 618,300 H660" fill="none" stroke="#9fb3c6" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+      <rect x="578" y="274" width="64" height="13" rx="2" fill="#0b0f14"/>
+      <text x="610" y="284" fill="#9fb3c6" font-size="8" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">PROOF ONLY</text>
+
+      <!-- 5: Hub -> Stream B -->
+      <path d="M560,320 H602 Q610,320 610,328 V447 Q610,455 618,455 H660" fill="none" stroke="#9fb3c6" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="583" y="382" width="54" height="13" rx="2" fill="#0b0f14"/>
+      <text x="610" y="392" fill="#9fb3c6" font-size="8" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">WEEKLY</text>
+
+      <!-- 6: Proof points -> CTA (link) -->
+      <line x1="880" y1="300" x2="960" y2="300" stroke="#60a5fa" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+      <rect x="888" y="276" width="64" height="13" rx="2" fill="#0b0f14"/>
+      <text x="920" y="286" fill="#60a5fa" font-size="8" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">LEAD FUNNEL</text>
+
+      <!-- ===================== NODES ===================== -->
+
+      <!-- Tool stack -->
+      <rect x="40" y="90" width="210" height="78" rx="6" fill="#0b0f14"/>
+      <rect x="40" y="90" width="210" height="78" rx="6" fill="rgba(159,179,198,0.08)" stroke="#9fb3c6" stroke-width="1"/>
+      <rect x="50" y="100" width="34" height="13" rx="2" fill="transparent" stroke="rgba(159,179,198,0.5)" stroke-width="0.8"/>
+      <text x="67" y="110" fill="#9fb3c6" font-size="7.5" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.08em">TOOL</text>
+      <text x="145" y="125" fill="#f4f8fb" font-size="13" font-weight="600" font-family="'Segoe UI', sans-serif" text-anchor="middle">AI Tool Stack</text>
+      <text x="145" y="141" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">Claude scripts · Higgsfield b-roll</text>
+      <text x="145" y="155" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">Codex / Astra edit + captions</text>
+
+      <!-- Production setup -->
+      <rect x="40" y="310" width="210" height="78" rx="6" fill="#0b0f14"/>
+      <rect x="40" y="310" width="210" height="78" rx="6" fill="rgba(159,179,198,0.08)" stroke="#9fb3c6" stroke-width="1"/>
+      <rect x="50" y="320" width="40" height="13" rx="2" fill="transparent" stroke="rgba(159,179,198,0.5)" stroke-width="0.8"/>
+      <text x="70" y="330" fill="#9fb3c6" font-size="7.5" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.08em">SETUP</text>
+      <text x="145" y="345" fill="#f4f8fb" font-size="13" font-weight="600" font-family="'Segoe UI', sans-serif" text-anchor="middle">Physical Setup</text>
+      <text x="145" y="361" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">camera + greenscreen</text>
+      <text x="145" y="375" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">teleprompter: decision pending</text>
+
+      <!-- HUB: The Channel (accent, focal) -->
+      <rect x="340" y="140" width="220" height="240" rx="8" fill="#0b0f14"/>
+      <rect x="340" y="140" width="220" height="240" rx="8" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-width="1.3"/>
+      <rect x="352" y="154" width="36" height="14" rx="2" fill="transparent" stroke="rgba(251,191,36,0.6)" stroke-width="0.9"/>
+      <text x="370" y="164" fill="#fbbf24" font-size="8" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.08em">HUB</text>
+      <text x="450" y="245" fill="#f4f8fb" font-size="17" font-weight="600" font-family="'Segoe UI', sans-serif" text-anchor="middle">The Channel</text>
+      <text x="450" y="266" fill="#fbbf24" font-size="10" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.04em">AI + business education</text>
+      <text x="450" y="283" fill="#9fb3c6" font-size="10" font-family="Consolas, monospace" text-anchor="middle">zero gardening content</text>
+      <text x="450" y="340" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">same niche as creator-education work</text>
+
+      <!-- Stream A: Scripted on-camera -->
+      <rect x="660" y="40" width="220" height="90" rx="6" fill="#0b0f14"/>
+      <rect x="660" y="40" width="220" height="90" rx="6" fill="rgba(251,191,36,0.06)" stroke="rgba(251,191,36,0.55)" stroke-width="1"/>
+      <rect x="670" y="50" width="52" height="13" rx="2" fill="transparent" stroke="rgba(251,191,36,0.5)" stroke-width="0.8"/>
+      <text x="696" y="60" fill="#fbbf24" font-size="7.5" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">STREAM A</text>
+      <text x="770" y="80" fill="#f4f8fb" font-size="13" font-weight="600" font-family="'Segoe UI', sans-serif" text-anchor="middle">Scripted On-Camera</text>
+      <text x="770" y="97" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">one trick, face to camera</text>
+      <text x="770" y="111" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">sentence takes · jump cuts</text>
+
+      <!-- Proof points -->
+      <rect x="660" y="215" width="220" height="170" rx="6" fill="#0b0f14"/>
+      <rect x="660" y="215" width="220" height="170" rx="6" fill="rgba(245,248,251,0.03)" stroke="rgba(245,248,251,0.30)" stroke-width="1"/>
+      <rect x="670" y="225" width="46" height="13" rx="2" fill="transparent" stroke="rgba(245,248,251,0.3)" stroke-width="0.8"/>
+      <text x="693" y="235" fill="#9fb3c6" font-size="7.5" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">PROOF</text>
+      <text x="770" y="256" fill="#f4f8fb" font-size="13" font-weight="600" font-family="'Segoe UI', sans-serif" text-anchor="middle">Proof Points</text>
+      <text x="770" y="273" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">named only when they ARE the answer</text>
+      <line x1="690" y1="285" x2="850" y2="285" stroke="#566d85" stroke-width="0.8"/>
+      <text x="770" y="302" fill="#f4f8fb" font-size="10" font-family="'Segoe UI', sans-serif" text-anchor="middle">GardenCalc · HomeCalc (ours)</text>
+      <text x="770" y="320" fill="#f4f8fb" font-size="10" font-family="'Segoe UI', sans-serif" text-anchor="middle">Phil's Roofing · Jack's Gym (client)</text>
+      <text x="770" y="340" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">real sites, real numbers, on screen</text>
+      <text x="770" y="366" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">never a pitch — a receipt</text>
+
+      <!-- Stream B: Weekly AI-news -->
+      <rect x="660" y="410" width="220" height="90" rx="6" fill="#0b0f14"/>
+      <rect x="660" y="410" width="220" height="90" rx="6" fill="rgba(159,179,198,0.06)" stroke="#9fb3c6" stroke-width="1"/>
+      <rect x="670" y="420" width="52" height="13" rx="2" fill="transparent" stroke="rgba(159,179,198,0.5)" stroke-width="0.8"/>
+      <text x="696" y="430" fill="#9fb3c6" font-size="7.5" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">STREAM B</text>
+      <text x="770" y="450" fill="#f4f8fb" font-size="13" font-weight="600" font-family="'Segoe UI', sans-serif" text-anchor="middle">Weekly AI-News Episode</text>
+      <text x="770" y="467" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">one release/story a week</text>
+      <text x="770" y="481" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">"everyone is talking about this" format</text>
+
+      <!-- CTA: ironphoenix.uk -->
+      <rect x="960" y="245" width="160" height="110" rx="6" fill="#0b0f14"/>
+      <rect x="960" y="245" width="160" height="110" rx="6" fill="rgba(96,165,250,0.08)" stroke="#60a5fa" stroke-width="1"/>
+      <rect x="970" y="255" width="30" height="13" rx="2" fill="transparent" stroke="rgba(96,165,250,0.5)" stroke-width="0.8"/>
+      <text x="985" y="265" fill="#60a5fa" font-size="7.5" font-family="Consolas, monospace" text-anchor="middle" letter-spacing="0.06em">URL</text>
+      <text x="1040" y="298" fill="#f4f8fb" font-size="13" font-weight="600" font-family="'Segoe UI', sans-serif" text-anchor="middle">ironphoenix.uk</text>
+      <text x="1040" y="316" fill="#60a5fa" font-size="9" font-family="Consolas, monospace" text-anchor="middle">/claude-skills</text>
+      <text x="1040" y="333" fill="#9fb3c6" font-size="9" font-family="Consolas, monospace" text-anchor="middle">AI-agent / SEO leads</text>
+
+      <!-- ===================== LEGEND ===================== -->
+      <line x1="40" y1="528" x2="1100" y2="528" stroke="#566d85" stroke-width="0.8"/>
+      <text x="40" y="546" fill="#9fb3c6" font-size="8" font-family="Consolas, monospace" letter-spacing="0.16em">LEGEND</text>
+
+      <rect x="40" y="560" width="14" height="10" rx="2" fill="rgba(251,191,36,0.10)" stroke="#fbbf24" stroke-width="1"/>
+      <text x="60" y="568" fill="#9fb3c6" font-size="8.5" font-family="'Segoe UI', sans-serif">Channel hub / focal</text>
+
+      <rect x="230" y="560" width="14" height="10" rx="2" fill="rgba(159,179,198,0.08)" stroke="#9fb3c6" stroke-width="1"/>
+      <text x="250" y="568" fill="#9fb3c6" font-size="8.5" font-family="'Segoe UI', sans-serif">Input / stream</text>
+
+      <rect x="400" y="560" width="14" height="10" rx="2" fill="rgba(245,248,251,0.03)" stroke="rgba(245,248,251,0.30)" stroke-width="1"/>
+      <text x="420" y="568" fill="#9fb3c6" font-size="8.5" font-family="'Segoe UI', sans-serif">Proof points (evidence)</text>
+
+      <rect x="620" y="560" width="14" height="10" rx="2" fill="rgba(96,165,250,0.08)" stroke="#60a5fa" stroke-width="1"/>
+      <text x="640" y="568" fill="#9fb3c6" font-size="8.5" font-family="'Segoe UI', sans-serif">Destination URL</text>
+
+      <line x1="40" y1="586" x2="68" y2="586" stroke="#fbbf24" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+      <text x="76" y="589" fill="#9fb3c6" font-size="8.5" font-family="'Segoe UI', sans-serif">Primary format</text>
+
+      <line x1="230" y1="586" x2="258" y2="586" stroke="#9fb3c6" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+      <text x="266" y="589" fill="#9fb3c6" font-size="8.5" font-family="'Segoe UI', sans-serif">Occasional / proof-only</text>
+
+      <line x1="430" y1="586" x2="458" y2="586" stroke="#60a5fa" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+      <text x="466" y="589" fill="#9fb3c6" font-size="8.5" font-family="'Segoe UI', sans-serif">Lead funnel</text>
+    </svg>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <p class="eyebrow">What</p>
+      <div class="card-header"><span class="card-dot accent"></span><h3>One channel, two cadences</h3></div>
+      <p>Already confirmed it has legs — 18 real accounts run this exact format at $74K-477K/month. Scripted on-camera is the daily/weekly trunk; the AI-news episode is one segment inside it, not a second channel.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Why</p>
+      <div class="card-header"><span class="card-dot link"></span><h3>Proof beats pitching</h3></div>
+      <p>GardenCalc, HomeCalc, Phil's Roofing, Jack's Gym get named only in the moment they ARE the answer to a claim on screen. A viewer who checks the receipt finds it real — that is the whole sales pitch, no voiceover needed.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">What it means</p>
+      <div class="card-header"><span class="card-dot muted"></span><h3>Our own builds are now the evidence</h3></div>
+      <p>Every proof-point site has to hold up to a live, on-camera look at any time. CTA disclosure stays on-screen text per ASA/CAP rules, never spoken-only.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Next 3 decisions — Gary owns</p>
+      <div class="card-header"><span class="card-dot ink"></span><h3>Before the first clip</h3></div>
+      <ul>
+        <li><b>1.</b> Teleprompter — test free on a tablet first; buy only if the free test is the bottleneck</li>
+        <li><b>2.</b> Greenscreen — one spare room, one lamp, one 20-min test clip before anything else</li>
+        <li><b>3.</b> First script — one Claude-written AI story slotted for the weekly news segment</li>
+        <li>Must not: film a real episode before the greenscreen + lighting test passes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>The AI channel · production + proof-point plan</span>
+    <span>NASCI · 18/10/2026</span>
+  </div>
+</div>
+</body>
+</html>
